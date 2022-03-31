@@ -1,0 +1,27 @@
+[package]
+name = "esp32-adc2"
+version = "0.1.0"
+authors = ["Sam Wilson <tecywiz121@hotmail.com>"]
+edition = "2018"
+resolver = "2"
+
+[profile.release]
+opt-level = "s"
+
+[profile.dev]
+debug = true # Symbols are nice and they don't increase the size on Flash
+opt-level = "z"
+
+[features]
+default = ["native"]
+native = ["esp-idf-sys/native"]
+
+[dependencies]
+esp-idf-sys = { version = "0.31", features = ["binstart"] }
+esp-idf-hal = "0.34.1"
+embedded-hal = "1.0.0-alpha.7"
+nb = "1.0.0"
+
+[build-dependencies]
+embuild = "0.28"
+anyhow = "1"
