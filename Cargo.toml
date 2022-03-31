@@ -19,7 +19,8 @@ native = ["esp-idf-sys/native"]
 [dependencies]
 esp-idf-sys = { version = "0.31", features = ["binstart"] }
 esp-idf-hal = "0.34.1"
-embedded-hal = "1.0.0-alpha.7"
+embedded-hal-0-2-7 = { version = "0.2.7", package = "embedded-hal" }
+embedded-hal-1-0-0 = { version = "1.0.0-alpha.7", package = "embedded-hal" }
 nb = "1.0.0"
 
 [build-dependencies]
